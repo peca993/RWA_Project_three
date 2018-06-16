@@ -1,16 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
+
 import { AppComponent } from './app.component';
-import { postReducer } from './reducers/post.reducer';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {
+  MatMenuModule, 
+  MatButtonModule, 
+  MatFormFieldModule,
+  MatInputModule,
+  MatIconModule, 
+  MatToolbarModule, 
+  MatDividerModule,
+  MatChipsModule,
+  MatDialogModule,
+} from '@angular/material';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({posts: postReducer})
+    BrowserAnimationsModule,
+    MatMenuModule, 
+    MatButtonModule, 
+    MatFormFieldModule, 
+    MatIconModule, 
+    MatInputModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatChipsModule,
+    MatDialogModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
