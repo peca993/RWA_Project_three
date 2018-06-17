@@ -1,2 +1,4 @@
 export const GET_ALL_POSTS = 'GET_ALL_POSTS';
 export const GET_ALL_POSTS_SUCCESS = 'GET_ALL_POSTS_SUCCESS';
+export const POST_POST = 'POST_POST';
+export const POST_POST_SUCCESS = 'POST_POST_SUCCESS';

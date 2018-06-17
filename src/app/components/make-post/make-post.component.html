@@ -1,0 +1,15 @@
+<div>
+  <h3>Novi post</h3>
+  
+  <div class="example-container">
+    <mat-form-field>
+      <input [(ngModel)]="pTitle" matInput placeholder="Title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea [(ngModel)]="pText" matInput placeholder="Text"></textarea>
+    </mat-form-field>
+
+    <button (click)='postPost()' mat-button color="accent">Post</button>
+  </div>
+</div>

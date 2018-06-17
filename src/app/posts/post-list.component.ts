@@ -25,8 +25,5 @@ export class PostListComponent implements OnInit {
     this.store$.dispatch(new GetAllPosts())
   }
 
-  loguj(){
-    console.log(this.posts$.source.source.source)
-  }
 
 }

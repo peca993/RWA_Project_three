@@ -21,7 +21,7 @@ import {
   MatToolbarModule, 
   MatDividerModule,
   MatChipsModule,
-  MatDialogModule,
+  MatDialogModule
 } from '@angular/material';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PostDetailComponent } from './posts/post-detail.component';
@@ -29,13 +29,15 @@ import { PostListComponent } from './posts/post-list.component';
 import { PostService } from './posts/post.service';
 
 import { PostEffects } from './store/effects/posts.effect';
+import { MakePostComponent } from './components/make-post/make-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PostDetailComponent,
-    PostListComponent
+    PostListComponent,
+    MakePostComponent
   ],
   imports: [
     BrowserModule,

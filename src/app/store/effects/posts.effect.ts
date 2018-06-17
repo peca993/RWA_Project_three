@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core'
 import {Effect, Actions} from '@ngrx/effects'
 import { PostService } from '../../posts/post.service';
-import { GET_ALL_POSTS } from '../actions/actions.types';
+import { GET_ALL_POSTS, POST_POST } from '../actions/actions.types';
 import { map, switchMap } from 'rxjs/operators';
-import { GetAllPosts , GetAllPostsSuccess } from '../actions/actions';
+import { GetAllPosts , GetAllPostsSuccess,PostPost,PostPostSuccess } from '../actions/actions';
 
 @Injectable()
 export class PostEffects {
@@ -24,5 +24,19 @@ export class PostEffects {
                     )
             })
         )
+
+    @Effect()
+    post$ = this.actions$
+        .ofType(POST_POST)
+        .pipe(
+            map(info => (info as PostPost).post),
+            switchMap(post => {
+                return this.service.postPost(post)
+                    .pipe(
+                        map(post => new PostPostSuccess(post))
+                    )
+            })
+        )
+
 
 }
