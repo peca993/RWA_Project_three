@@ -8,10 +8,10 @@ import {IPost} from './post';
 export class PostService {
     private API_PATH = 'http://localhost:3000/';
 
-    constructor(private http: Http) { }
+    constructor(private _http: Http) { }
 
     getAllPosts(): Observable<IPost[]> {
-        return this.http.get(`${this.API_PATH}posts`)
+        return this._http.get(`${this.API_PATH}posts`)
             .pipe(
                 map(res => res.json() || [])
             )

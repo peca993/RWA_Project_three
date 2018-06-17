@@ -1,4 +1,9 @@
 <div>
-  <h6>Postovi</h6>
+  <h1>Posts</h1>
+  <div *ngFor="let post of posts$ | async">
+    <app-post
+      [post] = "post"
+    >
+    </app-post>
+  </div>
   
-</div>

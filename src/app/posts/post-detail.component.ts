@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { PostService } from './post.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { IPost } from '../posts/post';
+import { Store } from '@ngrx/store';
+import { State } from '../store';
+
 
 @Component({
   selector: 'app-post',
@@ -7,7 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private store$: Store<State>
+  ) { }
+
+  @Input() 
+  public post: IPost
 
   ngOnInit() {
   }

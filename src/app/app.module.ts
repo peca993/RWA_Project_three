@@ -1,3 +1,9 @@
+import {EffectsModule, Actions} from '@ngrx/effects'
+import {StoreModule} from '@ngrx/store'
+import 'rxjs'
+
+import {rootReducer} from './store'
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -6,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {
+  MatCardModule,
   MatMenuModule, 
   MatButtonModule, 
   MatFormFieldModule,
@@ -21,6 +28,7 @@ import { PostDetailComponent } from './posts/post-detail.component';
 import { PostListComponent } from './posts/post-list.component';
 import { PostService } from './posts/post.service';
 
+import { PostEffects } from './store/effects/posts.effect';
 
 @NgModule({
   declarations: [
@@ -41,13 +49,20 @@ import { PostService } from './posts/post.service';
     MatDividerModule,
     MatChipsModule,
     MatDialogModule,
+    MatCardModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    StoreModule.forRoot(rootReducer),
+    EffectsModule.forRoot([
+      PostEffects
+    ])
     
   ],
   providers: [
+    Actions,
     PostService
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
+
