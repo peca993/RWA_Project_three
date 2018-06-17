@@ -1,0 +1,5 @@
+{
+    "posts": [
+        {"id": 1, "title": "naslov1", "text": "text bla bla"}
+    ]
+}

@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  title: string = "RWA3"
+
   constructor() { }
 
   ngOnInit() {
   }
-
+  
 }
